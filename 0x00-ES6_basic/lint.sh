@@ -5,4 +5,4 @@ then
 	exit 0
 fi
 
-npm run lint --fix "$1"
+npm run lint -- --fix "$1"
