@@ -8,6 +8,7 @@ export default class HolbertonCourse {
 
   validateType(name, length, students) {
     if (name && typeof name !== 'string') {
+      this._name = name;
       throw new TypeError('Name must be a string');
     }
 
