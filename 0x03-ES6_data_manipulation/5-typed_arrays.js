@@ -3,7 +3,7 @@ export default function createInt8TypedArray(length, position, value) {
     throw Error('Position outside range');
   }
 
-  if (value > 255 || value < -256) {
+  if (value > 255 || value < 0) {
     throw Error('Position outside range');
   }
 
