@@ -1,13 +1,12 @@
 export default function cleanSet(set, subStr) {
   const strList = [];
 
-  if (!(set instanceof Set)) {
+  if (!(set instanceof Set) || !subStr || typeof subStr !== 'string') {
     return '';
   }
 
   set.forEach((val) => {
-    if (subStr && typeof val === 'string'
-      && val.toLowerCase().startsWith(subStr.toLowerCase())) {
+    if (val.startsWith(subStr)) {
       strList.push(val.slice(subStr.length));
     }
   });
