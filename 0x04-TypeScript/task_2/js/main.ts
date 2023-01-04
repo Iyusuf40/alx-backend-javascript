@@ -59,6 +59,26 @@ function createEmployee(salary: number | string) {
   return new Director(salary);
 }
 
+/*
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+*/
+
+function isDirector(obj: TeacherInterface | DirectorInterface): boolean {
+  if (obj.getCoffeeBreak() === "Getting a coffee break") {
+    return true;
+  }
+  return false;
+}
+
+function executeWork(obj: TeacherInterface | DirectorInterface): string {
+  if (isDirector(obj)) {
+    return (<DirectorInterface>obj).workDirectorTasks();
+  }
+  return (<TeacherInterface>obj).workTeacherTasks();
+}
+
+
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
