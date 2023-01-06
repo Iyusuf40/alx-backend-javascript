@@ -5,6 +5,11 @@
 /// <reference path="subjects/Java.ts" />
 
 
+/**
+ * NOTE: compile with tsc with the --outFile flag
+ * eg tsc --outFile test.js js/main.ts
+ */
+
 const cTeacher: Subjects.Teacher = {
   firstName: "Val",
   lastName: "Maduagwu",
