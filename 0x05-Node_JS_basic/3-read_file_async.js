@@ -28,13 +28,10 @@ function res(data) {
 }
 
 function countStudents(fileName) {
-  // let content;
-
   return new Promise((resolve) => fs.readFile(fileName, 'utf-8', (err, data) => {
     if (err) {
-      throw new Error('Cannot load the database');
+      throw Error('Cannot load the database');
     }
-    // const content = data;
     res(data);
     resolve('done');
   }));
