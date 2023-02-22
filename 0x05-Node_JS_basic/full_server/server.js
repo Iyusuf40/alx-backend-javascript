@@ -1,4 +1,4 @@
-const app = require('./full_server/routes/index');
+import app from './routes/index';
 
 const port = 1245;
 

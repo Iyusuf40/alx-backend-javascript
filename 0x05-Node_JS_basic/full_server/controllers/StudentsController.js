@@ -1,14 +1,16 @@
-const readDatabase = require('../../../../full_server/utils.js');
+import readDatabase from '../utils';
 
 class StudentsController {
   static getAllStudents(request, response) {
-    readDatabase('database.csv')
+    let fieldMap;
+    readDatabase('./database.csv')
       .then((data) => {
+        fieldMap = data;
         let str = 'This is the list of our students';
         for (const key in fieldMap) {
           if (key) {
-	  const ar = fieldMap[key];
-            str += `\nNumber of students in ${key}:`, `${ar.length}.`, `List: ${ar.join(', ')}`;
+            const ar = fieldMap[key];
+            str += `\nNumber of students in ${key}: ${ar.length}. List: ${ar.join(', ')}`;
           }
         }
         response.send(str);
@@ -26,7 +28,7 @@ class StudentsController {
       response.send('Major parameter must be CS or SWE');
       return;
     }
-    readDatabase('database.csv')
+    readDatabase('./database.csv')
       .then((data) => {
         const ar = data[major];
         const str = `List: ${ar.join(', ')}`;
@@ -39,4 +41,4 @@ class StudentsController {
   }
 }
 
-module.exports = StudentsController;
+export default StudentsController;

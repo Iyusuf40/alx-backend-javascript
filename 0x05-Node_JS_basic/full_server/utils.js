@@ -1,4 +1,4 @@
-const fs = require('fs');
+import * as fs from 'fs';
 
 function res(data) {
   const content = data.trim();
@@ -26,10 +26,9 @@ function readDatabase(fileName) {
     if (err) {
       reject(err);
     }
-    // res(data);
-    resolve(res(data));
+    const resp = res(data);
+    resolve(resp);
   }));
 }
 
-// export default readDatabase;
-module.exports = readDatabase;
+export default readDatabase;
