@@ -2,7 +2,9 @@ const assert = require('assert');
 const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', function () {
-  it('should return 5', function () {
-    assert.equal(calculateNumber(1, 4), 5);
-  });
+  for(let i = 0; i < 140; i++){
+    it(`should return ${i * 2}`, function () {
+      assert.equal(calculateNumber(i, i), i * 2);
+    });
+  }
 });
