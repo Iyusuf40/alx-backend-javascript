@@ -8,4 +8,8 @@ describe('getPaymentTokenFromAPI', function() {
     done()
   })
 
+  it('should not return a promise', function() {
+    assert.equal(getPaymentTokenFromAPI(false), undefined)
+  })
+
 })
