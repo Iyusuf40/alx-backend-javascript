@@ -15,7 +15,7 @@
     "mocha": "^10.2.0"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
+    "test": "mocha",
     "lint": "./node_modules/.bin/eslint --fix"
   },
   "author": "",
