@@ -2,12 +2,15 @@ const assert = require('assert');
 const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
-  for (let i = 1; i <= 140; i++) {
+  for (let i = 0; i <= 140; i++) {
     let rem = i % 10;
     if (rem) {
       rem /= 10;
     } else {
       rem = 1;
+    }
+    if (i === 0) {
+      rem = 0;
     }
     if (rem >= 0.5) {
       it(`should return ${i + 1}`, () => {
