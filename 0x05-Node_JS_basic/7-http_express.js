@@ -50,9 +50,8 @@ app.get('/students', (req, res) => {
   let str;
   try {
     str = countStudents(process.argv[2]);
-  } catch {
-    str = `This is the list of our students
-Cannot load the database`
+  } catch (err) {
+    str = 'This is the list of our students\nCannot load the database';
   }
   res.send(str);
 });
