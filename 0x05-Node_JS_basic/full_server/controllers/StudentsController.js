@@ -3,7 +3,7 @@ import readDatabase from '../utils';
 class StudentsController {
   static getAllStudents(request, response) {
     let fieldMap;
-    readDatabase('./database.csv')
+    readDatabase(process.argv[2])
       .then((data) => {
         fieldMap = data;
         let str = 'This is the list of our students';
@@ -28,7 +28,7 @@ class StudentsController {
       response.send('Major parameter must be CS or SWE');
       return;
     }
-    readDatabase('./database.csv')
+    readDatabase(process.argv[2])
       .then((data) => {
         const ar = data[major];
         const str = `List: ${ar.join(', ')}`;
