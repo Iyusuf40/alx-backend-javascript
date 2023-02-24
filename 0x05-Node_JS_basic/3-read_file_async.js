@@ -29,9 +29,9 @@ function res(data) {
 
 function countStudents(fileName) {
   return new Promise((resolve) => fs.readFile(fileName, 'utf-8', (err, data) => {
-    /*if (err) {
+    /* if (err) {
       throw Error('Cannot load the database');
-    }*/
+    } */
     res(data);
     resolve(true);
   }));
