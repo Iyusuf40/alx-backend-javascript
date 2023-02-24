@@ -45,12 +45,15 @@ const app = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   // console.log(process.argv[2])
-  let database = process.argv[2];
-  if (!database) {
-    database = './database.csv';
-  }
+  const database = process.argv[2];
   if (req.url === '/students') {
-    const str = countStudents(database);
+    let str;
+    try {
+      str = countStudents(database);
+    } catch (err) {
+      str = `This is the list of our students
+Cannot load the database`;
+    }
     res.end(str);
   } else {
     res.end('Hello Holberton School!');
