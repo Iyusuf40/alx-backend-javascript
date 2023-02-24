@@ -47,7 +47,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  const str = countStudents(process.argv[2]);
+  let str;
+  try {
+    str = countStudents(process.argv[2]);
+  } catch {
+    str = `This is the list of our students
+Cannot load the database`
+  }
   res.send(str);
 });
 
