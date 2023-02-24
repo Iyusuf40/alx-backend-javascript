@@ -38,13 +38,13 @@ function countStudents(fileName) {
   }));
 }
 
-/*function countStudents(fileName) {
+/* function countStudents(fileName) {
   return fsp.readFile(fileName, 'utf-8')
     .then((data) => {
       const d = data.trim();
       res(d);
       return true;
   });
-}*/
+} */
 
 module.exports = countStudents;
