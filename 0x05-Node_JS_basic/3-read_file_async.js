@@ -22,18 +22,18 @@ function res(data) {
   for (const key in fieldMap) {
     if (key) {
       const ar = fieldMap[key];
-      console.log(`Number of students in ${key}:, ${ar.length}., List: ${ar.join(', ')}`);
+      console.log(`Number of students in ${key}: ${ar.length}. List: ${ar.join(', ')}`);
     }
   }
 }
 
 function countStudents(fileName) {
   return new Promise((resolve) => fs.readFile(fileName, 'utf-8', (err, data) => {
-    if (err) {
+    /*if (err) {
       throw Error('Cannot load the database');
-    }
+    }*/
     res(data);
-    resolve('done');
+    resolve(true);
   }));
 }
 
