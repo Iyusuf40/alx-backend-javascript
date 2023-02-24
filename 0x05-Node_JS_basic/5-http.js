@@ -45,8 +45,12 @@ const app = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   // console.log(process.argv[2])
-  const str = countStudents(process.argv[2]);
+  let database = process.argv[2];
+  if (!database) {
+    database = './database.csv';
+  }
   if (req.url === '/students') {
+    const str = countStudents(database);
     res.end(str);
   } else {
     res.end('Hello Holberton School!');
