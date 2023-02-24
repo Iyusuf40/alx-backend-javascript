@@ -47,9 +47,9 @@ const app = http.createServer((req, res) => {
   // console.log(process.argv[2])
   const str = countStudents(process.argv[2]);
   if (req.url === '/students') {
-    res.send(str);
+    res.end(str);
   }
-  res.send('Hello Holberton School!');
+  res.end('Hello Holberton School!');
 });
 
 app.listen(port, hostname, () => {
