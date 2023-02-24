@@ -1,6 +1,9 @@
 import * as fs from 'fs';
 
 function res(data) {
+  if (!data) {
+    return 'Cannot load the database';
+  }
   const content = data.trim();
   const contentLines = content.split('\n');
   contentLines.splice(0, 1);
