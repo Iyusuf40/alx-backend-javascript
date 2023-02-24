@@ -24,10 +24,9 @@ describe('calculateNumber', () => {
   }
 });
 
-/* describe('calculateNumber', function () {
-  for(let i = 0; i < 140; i++){
-    it(`should return ${i * 2}`, function () {
-      assert.equal(calculateNumber(i, i), i * 2);
-    });
-  }
-}); */
+describe('calculateNumber first number rounded', function () {
+  it(`should return ${3}`, function () {
+      assert.equal(calculateNumber(0.2, 3), 3);
+  });
+
+});
