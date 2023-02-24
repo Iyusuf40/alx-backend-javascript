@@ -25,11 +25,11 @@ function countStudents(fileName) {
       }
     }
   }
-  console.log('Number of students:', contentLines.length);
+  console.log(`Number of students: ${contentLines.length}`);
   for (const key in fieldMap) {
     if (key) {
       const ar = fieldMap[key];
-      console.log(`Number of students in ${key}:`, `${ar.length}.`, `List: ${ar.join(', ')}`);
+      console.log(`Number of students in ${key}: ${ar.length}. List: ${ar.join(', ')}`);
     }
   }
 }
