@@ -1,4 +1,5 @@
 const fs = require('fs');
+// const fsp = require('fs').promises;
 
 function res(data) {
   const content = data.trim();
@@ -18,7 +19,7 @@ function res(data) {
       }
     }
   }
-  console.log(`Number of students:, ${contentLines.length}`);
+  console.log(`Number of students: ${contentLines.length}`);
   for (const key in fieldMap) {
     if (key) {
       const ar = fieldMap[key];
@@ -29,12 +30,21 @@ function res(data) {
 
 function countStudents(fileName) {
   return new Promise((resolve) => fs.readFile(fileName, 'utf-8', (err, data) => {
-    /* if (err) {
+    if (err) {
       throw Error('Cannot load the database');
-    } */
+    }
     res(data);
     resolve(true);
   }));
 }
+
+/*function countStudents(fileName) {
+  return fsp.readFile(fileName, 'utf-8')
+    .then((data) => {
+      const d = data.trim();
+      res(d);
+      return true;
+  });
+}*/
 
 module.exports = countStudents;
