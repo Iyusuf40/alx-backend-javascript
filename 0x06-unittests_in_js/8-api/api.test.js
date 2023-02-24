@@ -11,4 +11,11 @@ describe('api', function() {
     })
     done()
   })
+  it('should respond with 404', function(done) {
+    request(url + 'nonexistent', function(err, response, body) {
+      assert.equal(response.statusCode, 404)
+    })
+    done()
+  })
+
 })
