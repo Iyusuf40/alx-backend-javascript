@@ -68,5 +68,8 @@ describe('test calculateNumber divide', () => {
       });
     }
   }
+  it(`should return 5`, () => {
+    assert.equal(calculateNumber('DIVIDE', 10, 2.1), 5);
+  })
 });
 
