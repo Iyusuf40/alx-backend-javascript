@@ -16,15 +16,15 @@ describe('api', function() {
     request(url + 'cart/12', function(err, response, body) {
       assert.equal(response.statusCode, 200)
       assert.equal(body, 'Payment methods for cart 12')
+      done()
     })
-    done()
   })
 
   it('should respond with 404', function(done) {
     request(url + 'cart/hello', function(err, response, body) {
       assert.equal(response.statusCode, 404)
+      done()
     })
-    done()
   })
 
 })
