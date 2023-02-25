@@ -8,14 +8,16 @@ describe('api', function() {
     request(url, function(err, response, body) {
       assert.equal(response.statusCode, 200)
       assert.equal(body, 'Welcome to the payment system')
+      done()
     })
-    done()
+    // done() wrong place to call done
   })
   it('should respond with 404', function(done) {
     request(url + 'nonexistent', function(err, response, body) {
       assert.equal(response.statusCode, 404)
+      done()
     })
-    done()
+    // done()
   })
 
 })
